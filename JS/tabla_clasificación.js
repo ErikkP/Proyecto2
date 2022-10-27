@@ -30,8 +30,6 @@ function getData() {
             "src",
              patata[i].team.crestUrl
           );
-          imgEq.classList.add("imgnav")
-
           imgEq.classList.add("imgLocal");
           let equipos = patata[i].team.name
           let posicion = patata[i].position
