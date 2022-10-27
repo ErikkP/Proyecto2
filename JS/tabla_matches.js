@@ -1,101 +1,3 @@
-// let equipo_local = partidos.matches[0].homeTeam.name;
-// console.log(equipo_local);
-// let resultado_local = partidos.matches[0].score.fullTime.homeTeam
-// console.log(resultado_local)
-
-// let equipo_visitante = partidos.matches[0].awayTeam.name;
-// console.log(equipo_visitante)
-
-// let resultado_visitante = partidos.matches[0].score.fullTime.awayTeam
-// console.log(resultado_visitante)
-
-// let fecha = partidos.matches[0].matchday
-// console.log(fecha)
-
-// let jornada = partidos.matches[0].season.startDate
-// console.log(jornada)
-
-// let posicion = clasificacion.standings[0].table[0].position
-
-// let barcelona = clasificacion.standings[0].table[0].team.name
-// // console.log(barcelona)
-
-// let partidosbar = clasificacion.standings[0].table[0].playedGames
-// // console.log(partidosbar)
-
-// let victorias = clasificacion.standings[0].table[0].won
-// // console.log(victorias)
-
-// let empates = clasificacion.standings[0].table[0].draw
-// // console.log(empates)
-
-// let derrotas = clasificacion.standings[0].table[0].lost
-// // console.log(derrotas)
-
-// let gf = clasificacion.standings[0].table[0].goalsFor
-// // console.log(gf)
-
-// let gc = clasificacion.standings[0].table[0].goalsAgainst
-// // console.log(gc)
-
-// let gd = clasificacion.standings[0].table[0].goalDifference
-// // console.log(gd)
-
-// let pts = clasificacion.standings[0].table[0].points
-// // console.log(pts)
-
-// console.log(posicion, barcelona, partidosbar, victorias, empates, derrotas, gf, gc, gd, pts)
-
-// let posicionvcf = clasificacion.standings[0].table[6].position
-
-// let valenciacf = clasificacion.standings[0].table[6].team.name
-// // console.log(barcelona)
-
-// let partidosval = clasificacion.standings[0].table[6].playedGames
-// // console.log(partidosbar)
-
-// let victoriascf = clasificacion.standings[0].table[6].won
-// // console.log(victorias)
-
-// let empatescf = clasificacion.standings[0].table[6].draw
-// // console.log(empates)
-
-// let derrotascf = clasificacion.standings[0].table[6].lost
-// // console.log(derrotas)
-
-// let gfcf = clasificacion.standings[0].table[6].goalsFor
-// // console.log(gf)
-
-// let gccf = clasificacion.standings[0].table[6].goalsAgainst
-// // console.log(gc)
-
-// let gdcf = clasificacion.standings[0].table[6].goalDifference
-// // console.log(gd)
-
-// let ptscf = clasificacion.standings[0].table[6].points
-
-// console.log(posicionvcf, valenciacf, partidosval, victoriascf, empatescf, derrotascf, gfcf, gccf, gdcf, ptscf)
-
-// let equipo_local = partidos.matches[0].homeTeam.name;
-// let equipo_visitante = partidos.matches[1].awayTeam.name;
-
-// console.log(datos)
-
-// for (let i = 0; i < datos.length; i++) {
-//   let equipo_local = datos[i].homeTeam.name;
-// //   console.log(equipo_local);
-
-//   let equipo_visitante = datos[i].homeTeam.name;
-// //   console.log(equipo_visitante);
-
-//   let datosequipos = [equipo_local, equipo_visitante];
-//   for (let j = 0; j < datosequipos.length; j++) {
-//     let nombre = document.createElement("p")
-//     nombre.innerHTML = datosequipos[j];
-//     console.log(nombre)
-//   }
-// }
-
 // let datos = partidos.matches;
 // console.log(datos);
 quitarAlert1();
@@ -103,8 +5,9 @@ quitarAlert2();
 quitarAlert3();
 
 function getData() {
+  document.getElementById("spinner").style.display = "block"
   const url = "https://api.football-data.org/v2/competitions/2014/matches";
-
+  
   fetch(url, {
     method: "GET",
     headers: {
@@ -120,7 +23,7 @@ function getData() {
     .then((data) => {
       // console.log(data)
       let datos = data.matches;
-
+      document.getElementById("spinner").style.display = "none"
       crearTabla(datos);
       let borrar = document.getElementById("borrar");
       borrar.addEventListener("click", () => {
@@ -157,10 +60,18 @@ function crearTabla(tomate) {
     let equipo_visitante = document.createElement("p");
     equipo_visitante.innerHTML = tomate[i].awayTeam.name;
 
-    let resultado_local = document.createElement("p");
-    resultado_local.innerHTML = tomate[i].score.fullTime.homeTeam;
-    let resultado_visitante = document.createElement("p");
-    resultado_visitante.innerHTML = tomate[i].score.fullTime.awayTeam;
+    // let resultado_local = document.createElement("p");
+    // resultado_local.innerHTML = tomate[i].score.fullTime.homeTeam;
+    // let resultado_visitante = document.createElement("p");
+    // resultado_visitante.innerHTML = tomate[i].score.fullTime.awayTeam;
+
+    let resultado = tomate[i].score.fullTime.homeTeam 
+    + "-" + 
+    tomate[i].score.fullTime.awayTeam;
+    if (resultado === "null-null") {
+        resultado = "Por jugar";
+    }
+
     let imgEqLocal = document.createElement("img");
     imgEqLocal.setAttribute(
       "src",
@@ -184,8 +95,7 @@ function crearTabla(tomate) {
     let datos_tabla = [
       equipo_local,
       imgEqLocal,
-      resultado_local,
-      resultado_visitante,
+      resultado,
       imgEqVisitante,
       equipo_visitante,
       fecha.toLocaleString(),
@@ -212,7 +122,7 @@ function filtrarEquipos(matches) {
   }
 
   let alerta2 = document.getElementById("alert2");
-  let nombreEquipoInput = datos.filter((p) => {
+  let nombreEquipoInput = matches.filter((p) => {
     if (
       p.homeTeam.name.toLowerCase().includes(input_filtro.toLowerCase()) ||
       p.awayTeam.name.toLowerCase().includes(input_filtro.toLowerCase())

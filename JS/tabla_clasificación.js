@@ -1,68 +1,5 @@
-// let posicion = clasificacion.standings[0].table[0].position
-
-// let barcelona = clasificacion.standings[0].table[0].team.name
-// console.log(barcelona)
-// console.log(posicion)
-
-// let partidosbar = clasificacion.standings[0].table[0].playedGames
-// // console.log(partidosbar)
-
-// let victorias = clasificacion.standings[0].table[0].won
-// // console.log(victorias)
-
-// let empates = clasificacion.standings[0].table[0].draw
-// // console.log(empates)
-
-// let derrotas = clasificacion.standings[0].table[0].lost
-// // console.log(derrotas)
-
-// let gf = clasificacion.standings[0].table[0].goalsFor
-// // console.log(gf)
-
-// let gc = clasificacion.standings[0].table[0].goalsAgainst
-// // console.log(gc)
-
-// let gd = clasificacion.standings[0].table[0].goalDifference
-// // console.log(gd)
-
-// let pts = clasificacion.standings[0].table[0].points
-// // console.log(pts)
-
-// console.log(posicion, barcelona, partidosbar, victorias, empates, derrotas, gf, gc, gd, pts)
-
-// let posicionvcf = clasificacion.standings[0].table[6].position
-
-// let valenciacf = clasificacion.standings[0].table[6].team.name
-// // console.log(barcelona)
-
-// let partidosval = clasificacion.standings[0].table[6].playedGames
-// // console.log(partidosbar)
-
-// let victoriascf = clasificacion.standings[0].table[6].won
-// // console.log(victorias)
-
-// let empatescf = clasificacion.standings[0].table[6].draw
-// // console.log(empates)
-
-// let derrotascf = clasificacion.standings[0].table[6].lost
-// // console.log(derrotas)
-
-// let gfcf = clasificacion.standings[0].table[6].goalsFor
-// // console.log(gf)
-
-// let gccf = clasificacion.standings[0].table[6].goalsAgainst
-// // console.log(gc)
-
-// let gdcf = clasificacion.standings[0].table[6].goalDifference
-// // console.log(gd)
-
-// let ptscf = clasificacion.standings[0].table[6].points
-
-// console.log(posicionvcf, valenciacf, partidosval, victoriascf, empatescf, derrotascf, gfcf, gccf, gdcf, ptscf)
-
-
-
 function getData() {
+  document.getElementById("spinner").style.display = "block"
   const url = "https://api.football-data.org/v2/competitions/2014/standings";
 
   fetch(url, {
@@ -80,7 +17,7 @@ function getData() {
     .then((data) => {
       // console.log(data)
       let clasif = data.standings[0].table
-
+      document.getElementById("spinner").style.display = "none"
       crearTabla(clasif);
       function crearTabla(patata) {
         let cuerpo_tabla_calsif = document.getElementById("tablaclasif");
@@ -93,6 +30,8 @@ function getData() {
             "src",
              patata[i].team.crestUrl
           );
+          imgEq.classList.add("imgnav")
+
           imgEq.classList.add("imgLocal");
           let equipos = patata[i].team.name
           let posicion = patata[i].position
