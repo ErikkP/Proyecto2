@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partidos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" type="image/png" href="https://1.bp.blogspot.com/-OdYlDEfNnrM/W--HUugMMmI/AAAAAAABS9Q/0zJg5iveyrcVjNyvFtAy4c5jZT1H2OovgCLcBGAs/s1600/ESP.png"/>
+</head>
+
+<body class="body1">
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">LaLiga Web</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          <a class="nav-link" href="equipos.html">Equipos LaLiga</a>
+          <a class="nav-link" href="clasificacion.html">Clasificación LaLiga</a>
+          <a class="nav-link" href="tabla.html">Partidos LaLiga</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="busqueda">
+    <h4>Busca aquí el equipo que quieras ver</h4>
+    <input type="text" class="text">
+    <button id="boton_busqueda">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+    <button id="borrar">
+      <i class="fa-solid fa-trash-can"></i>
+    </button>
+    <div class="botones">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="ganados">
+        <label class="form-check-label" for="flexRadioDefault1">
+          Ganados
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="perdidos">
+        <label class="form-check-label" for="flexRadioDefault2">
+          Perdidos
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="empatados">
+        <label class="form-check-label" for="flexRadioDefault2">
+          Empatados
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" value="tbp">
+        <label class="form-check-label" for="flexRadioDefault2">
+          Próximos partidos
+        </label>
+      </div>
+    </div>
+
+    <div class="alert alert-secondary alert-dismissible fade show" role="alert" id="alert1">
+      <strong>"No hay ningún equipo nombrado."</strong> Introduzca el nombre del equipo por favor.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div class="alert alert-secondary alert-dismissible fade show" role="alert" id="alert2">
+      <strong>"El equipo que busca no es de La Liga o lo ha escrito mal."</strong> Asegurese de que esté bien escrito.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div class="alert alert-secondary alert-dismissible fade show" role="alert" id="alert3">
+      <strong>"Por favor introduzca un filtro para realizar la búsqueda."</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <!-- <input type="radio" name="Partidos ganados" id="win">
+    <label for="win">Partidos ganados</label>
+    <input type="radio" name="Partidos perdidos" id="lost">
+    <label for="lost">Partidos perdidos</label>
+    <input type="radio" name="Partidos empatados" id="draw">
+    <label for="draw">Partidos empatados</label>
+    <input type="radio" name="Partidos por jugar" id="tbp">
+    <label for="tbp">Partidos por jugar</label> -->
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="2">Equipo Local</th>
+        <th colspan="2">Resultado</th>
+        <th colspan="2">Equipo visitante</th>
+        <th>Fecha partidos</th>
+        <th>Jornada</th>
+      </tr>
+    </thead>
+    <tbody id="tabla">
+
+    </tbody>
+  </table>
+
+
+  <footer class="footer contactof text">
+    <div class="iconos">
+        <a href="https://www.facebook.com/LaLiga" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/laliga/" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/user/laliga" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="https://twitter.com/laliga" target="_blank">
+          <i class="fa-brands fa-twitter"></i>
+      </a>
+    </div>
+    <p>¡Síguenos en nuestras redes!</p>
+    <p>&#169 Made by Erik</p>
+
+</footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+  </script>
+  <script src="./JS/matches.js"></script>
+  <script src="./JS/clasificacion.js"></script>
+  <script src="./JS/tabla_matches.js"></script>
+</body>
+
+</html>

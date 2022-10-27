@@ -1,0 +1,159 @@
+.nav-link,
+.navbar-brand{
+    color: whitesmoke   ;
+}
+
+.navbar{
+    background-color: #0c1b23;
+}
+
+.imgLocal,
+.imgVisitante{
+    margin: auto;
+    height: 40px;
+    width: 40px;
+}
+
+.index{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center   ;
+   margin-top: 30px;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+    
+}
+
+.table{
+    width: 70%;
+    margin: auto;
+}
+
+.d-block{
+    height: 450px;
+    width: 400px;
+}
+
+h1{
+    padding: 20px;
+    color: whitesmoke;
+    margin-bottom: 50px;
+}
+.carousel{
+    height: 454px;
+    width: 850px;
+    margin: auto;
+    border: solid 2px black;
+    box-shadow: 10px 10px black;
+    
+}
+
+/* .carousel-inner{
+    height: 500px;
+    width: 850px;
+} */
+
+/* .rounded{
+    height: 200px;
+    width: 250px;
+} */
+
+.body{
+    background-image: url(https://thumbs.dreamstime.com/b/campo-de-f%C3%BAtbol-de-la-arena-del-estadio-de-la-noche-57408902.jpg);     background-repeat: no-repeat;     background-attachment: fixed;     background-size:1900px;   
+}
+
+.body1{
+    background-image: url(https://mobimg.b-cdn.net/v3/fetch/30/30246d857d8941736b5cd7139f41b0f3.jpeg);
+    background-repeat: no-repeat;     
+    background-attachment: fixed;     
+    background-size:1900px;
+
+}
+
+/* .body2{
+    background-image: url(https://s1.eestatic.com/2017/02/01/actualidad/actualidad_190495208_129761986_1706x960.jpg);
+} */
+
+.table{
+    margin-top: 50px;
+    background-color: #0c1b23;
+    color: whitesmoke;
+    text-align: center;
+}
+
+/* .table-striped{
+    color: whitesmoke;
+}
+.table p{
+    color: whitesmoke;
+}
+
+tbody tr {
+    color: whitesmoke;
+} */
+
+
+.carta{
+    flex-direction: row;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 100px;
+}
+
+.card{
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.busqueda {
+    text-align: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.text{
+    margin-top: 15px;
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form-check{
+    color: whitesmoke;
+    padding-right: 20px;
+}
+
+.footer {
+    margin-top: 270px;
+    background-color: #0c1b23;
+    width: 100%;
+    text-align: center;
+    height: 100px;
+    color: whitesmoke;
+}
+
+.iconos a {
+    text-decoration-line: none;
+    color: whitesmoke;
+    padding: 30px;
+    
+}
+
+.card{
+    background-color: #0c1b23;
+    color: whitesmoke;
+}
+
+.alert{
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+}
