@@ -246,7 +246,9 @@ function resetFilter() {
   for (let i = 0; i < radioButton.length; i++) {
     radioButton[i].checked = false;
   }
-
+  quitarAlert1()
+  quitarAlert2()
+  quitarAlert3()
   crearTabla(datos);
 }
 
