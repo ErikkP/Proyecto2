@@ -145,15 +145,19 @@ h2 {
     background-color: #0c1b23;
     width: 100%;
     text-align: center;
-    height: 100px;
+    height: 150px;
     color: whitesmoke;
+    display: grid;
+}
+
+.iconos{
+  padding: 20px;
 }
 
 .iconos a {
     text-decoration-line: none;
     color: whitesmoke;
     padding: 30px;
-    
 }
 
 .card{

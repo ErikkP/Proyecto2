@@ -24,7 +24,7 @@ function getData() {
         cuerpo_tabla_calsif.innerHTML = "";
         for (let i = 0; i < patata.length; i++) {
           let tr = document.createElement("tr");
-      
+          console.log(patata)
           let imgEq = document.createElement("img");
           imgEq.setAttribute(
             "src",
@@ -37,6 +37,10 @@ function getData() {
           let goles = patata[i].goalsFor
           let golescontra = patata[i].goalsAgainst
           let pg = patata[i].playedGames
+          let pw = patata[i].won
+          let pl = patata[i].lost
+          let pd = patata[i].draw
+          let gd = patata[i].goalDifference
       
           let clasif_datos = [
             posicion,
@@ -45,7 +49,11 @@ function getData() {
             puntos,
             goles,
             golescontra,
-            pg
+            gd,
+            pg,
+            pw,
+            pl,
+            pd
           ]
           
           for (let t = 0; t < clasif_datos.length; t++) {

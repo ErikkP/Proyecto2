@@ -39,7 +39,7 @@ function getData() {
         filtrarEquipos(datos);
       });
       
-      crearTabla(datos)
+    
       // console.log(datos)
     })
     .catch((error) => {
